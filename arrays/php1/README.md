@@ -37,7 +37,7 @@
  Ao passar pela função `calculaMediaIdade($idades)`, deverá retornar: 
  
 ```php
-    61.666666667
+    28.333333333333
 ```
 
 ### Exercícios 1
