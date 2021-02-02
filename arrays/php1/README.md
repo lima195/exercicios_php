@@ -27,7 +27,7 @@
 #### Exemplo:
 
 ```php
-    $nomes = [
+    $idades = [
         25,
         'pessoa_c' => 25,
         35,
