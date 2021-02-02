@@ -489,3 +489,8 @@ Ao passar pela função `listarIdades($idades)`, deverá retornar:
         'pessoa_a' => 22,
     ];
 ```
+
+
+---
+#### Respostas:
+https://github.com/lima195/exercicios_php/tree/main/arrays/php1/answers
