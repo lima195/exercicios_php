@@ -1,7 +1,9 @@
+# Respostas exercícios php array 1 (https://github.com/lima195/exercicios_php/blob/main/arrays/php1/README.md)
+
 ## Exercício *1* 
 #### - Dado o array com idades, implemente a solução na função `calculaMediaIdade($idade)` que recebe o array $idade como parâmetro e retornará um valor numérico (int, double ou float) e exiba na tela:
 
-### Modelo:
+### Solução:
 
 ```php
     // Função a ser utilizada:
@@ -13,7 +15,13 @@
     function calculaMediaIdade($idades) {
         $resultado = 0;
 
-        // Seu código
+        $totalIdades = count($idades);
+
+        foreach($idades as $idade) {
+            $resultado += $idade;
+        }
+
+        $resultado = $resultado/$totalIdades;
 
         return $resultado;
     }
@@ -24,91 +32,34 @@
     var_dump($media);
 ```
 
-#### Exemplo:
-
-```php
-    $nomes = [
-        25,
-        'pessoa_c' => 25,
-        35,
-    ];
-```
-
- Ao passar pela função `calculaMediaIdade($idades)`, deverá retornar: 
- 
-```php
-    61.666666667
-```
-
-### Exercícios 1
+### Respostas 1
 ---
 
 ### 1 - *a)*
 ```php
-    $idades = [
-        25,
-        50,
-        30
-    ];
+    35
 ```
 
 ### 1 - *b)*
 ```php
-    $idades = [
-        35,
-        41,
-        52,
-        44,
-        33,
-        22,
-    ];
+    37.833333333333
 ```
 
 ### 1 - *c)* 
 ```php
-    $idades = [
-        15,
-        20,
-        60,
-        40,
-        72,
-        13,
-        60,
-        20,
-        11,
-        66,
-        14,
-        6,
-        22,
-        36,
-        30,
-    ];
+    32.333333333333
 ```
 
 ### 1 - *d)*
 ```php
-    $idades = [
-        35,
-        41,
-        'pessoa_c' => 52,
-        44,
-        'idade' => 33,
-        'pessoa_a' => 22,
-    ];
+    37.833333333333
 ```
 
-#
-#
-#
----
-#
-#
-#
 
 ## Exercício *2* 
 #### – Dado o array de cada exercício, retorne qual é o maior número de todos implementando a solução na função `calcularMaiorNumero($numeros)` que recebe $numeros como parâmetro de entrada e retornará um valor numérico(int, double ou float) e exiba na tela.
 
-#### Modelo:
+### Solução:
 
 ```php
     // Função a ser utilizada:
@@ -119,8 +70,12 @@
     */
     function calcularMaiorNumero($numeros) {
         $resultado = 0;
-
-        // Seu código
+        
+        foreach($numeros as $numero) {
+            if($resultado < $numero) {
+                $resultado = $numero;
+            }
+        }
 
         return $resultado;
     }
@@ -131,77 +86,27 @@
     var_dump($maiorNumero);
 ```
 
-#### Exemplo:
-
-```php
-    $numeros = [
-        85,
-        'pessoa_c' => 25,
-        35,
-    ];
-```
-
- Ao passar pela função `calcularMaiorNumero($numeros)`, deverá retornar: 
- 
-```php
-    85
-```
-
-### Exercícios 2
+### Res 2
 ---
 
 ### 2 - *a)*
 ```php
-    $numeros = [
-        35,
-        57,
-        22
-    ];
+    57
 ```
 
 ### 2 - *b)*
 ```php
-    $numeros = [
-        22,
-        95,
-        52,
-        41,
-        33,
-        44,
-    ];
+    96
 ```
 
 ### 2 - *c)*
 ```php
-    $numeros = [
-        11,
-        20,
-        60,
-        15,
-        72,
-        13,
-        60,
-        40,
-        66,
-        14,
-        0,
-        11.5,
-        36,
-        30,
-        20,
-    ];
+    72
 ```
 
 ### 2 - *d)*
 ```php
-    $numeros = [
-        350,
-        421,
-        'x' => 152,
-        441,
-        'y' => 311,
-        'z' => 22,
-    ];
+    441
 ```
 
 #
@@ -215,7 +120,7 @@
 ## Exercício *3* 
 #### – Dado o array de cada exercício, retorne uma string com a junção dos nomes, separados por um espaço implementando a solução na função `juntaNomes($nomes)` que recebe o array $nomes como parâmetro de entrada e retornará uma string e exiba na tela.
 
-#### Modelo:
+#### Solução:
 
 ```php
     // Função a ser utilizada:
@@ -228,7 +133,16 @@
         // Definindo uma string vazia
         $resultado = '';
 
-        // Seu código
+        $i = 0;
+        foreach($nomes as $nome) {
+            if($i == 0) {
+                $resultado = $nome;
+            } else {
+                $resultado = $resultado . ' ' . $nome;
+            }
+
+            $i++;
+        }
 
         return $resultado;
     }
@@ -239,62 +153,27 @@
     var_dump($nomesInvertido);
 ```
 
-#### Exemplo:
-```php
-    $nomes = [
-        'Gabriela',
-        'de',
-        'gm' => 'Lucas',
-    ];
-```
-
- Ao passar pela função `juntaNomes($nomes)`, deverá retornar: 
- 
-```php
-    'Gabriela de Lucas'
-```
-
-### Exercícios 3
+### Respostas 3
 ---
 
 ### 3 - *a)*
 ```php
-    $nomes = [
-        'João',
-        'da',
-        'Silva'
-    ];
+    'João da Silva'
 ```
 
 ### 3 - *b)*
 ```php
-    $nomes = [
-        'Mauro',
-        'Taka',
-        'Kara',
-        'No',
-        'Muro',
-    ];
+    'Mauro Taka Kara No Muro'
 ```
 
 ### 3 - *c)*
 ```php
-    $nomes = [
-        'Naruto',
-        'Uzumaki',
-        8 => 'Mama',
-        'Aki',
-    ];
+    'Naruto Uzumaki Mama Aki'
 ```
 
 ### 3 - *d)*
 ```php
-    $nomes = [
-        'smith' => 'Will',
-        'will' => 'Smith',
-        4 => 'da',
-        'Silva',
-    ];
+    'Will Smith da Silva'
 ```
 
 #
@@ -308,7 +187,7 @@
 ## Exercício *4* 
 #### – Dado o array de cada exercício, retorne outro array com a ordem invertida implementando a solução na função `inverterCarros($carros)` que recebe $carros como parâmetro de entrada e retornará um array com a ordem invertida e exiba na tela.
 
-### Modelo:
+### Solução:
 
 ```php
     // Função a ser utilizada:
@@ -321,7 +200,12 @@
         // Definindo array vazio
         $resultado = [];
 
-        // Seu código
+        $totalCarros = count($carros);
+    
+        foreach($carros as $key => $carro) {
+            $totalCarros--;
+            $resultado[] = $carros[$totalCarros]; 
+        }
 
         return $resultado;
     }
@@ -332,28 +216,7 @@
     var_dump($carrosInvertido);
 ```
 
-### Exemplo:
-```php
-    $carros = [
-        'corsa',
-        'fusca',
-        'camaro',
-        'gol',
-    ];
-```
-
-Ao passar pela função `inverterArray($idades)`, deverá retornar:
-    
-```php
-    [
-        'gol',
-        'camaro',
-        'fusca',
-        'corsa',
-    ];
-```
-
-### Exercícios 4
+### Respostas 4
 ---
 
 ### 4 - *a)*
@@ -389,7 +252,7 @@ Ao passar pela função `inverterArray($idades)`, deverá retornar:
 ## Exercício *5* 
 #### – Dado array com idades, crie um novo array onde para cada item do array $idades tenha como key a idade e como value um valor booleano (true ou false), para idades iguais ou maiores a 18, defina como true, ou então defina como false. Implemente a sua solução na função `listarIdades($idades)` onde retornará um array e exiba na tela.
 
-### Modelo:
+### Solução:
 
 ```php
     // Função a ser utilizada:
@@ -402,7 +265,13 @@ Ao passar pela função `inverterArray($idades)`, deverá retornar:
         // Definindo array vazio
         $resultado = [];
 
-        // Seu código
+        foreach($idades as $idade) {
+            if($idade >= 18) {
+                $resultado[$idade] = true;
+            } else {
+                $resultado[$idade] = false;
+            }
+        }
 
         return $resultado;
     }
@@ -413,79 +282,57 @@ Ao passar pela função `inverterArray($idades)`, deverá retornar:
     var_dump($novasIdades);
 ```
 
-### Exemplo:
-
-```php
-    $idades = [
-        11,
-        25,
-        18,
-        'pessoa_x' => 31,
-    ];
-```
-
-Ao passar pela função `listarIdades($idades)`, deverá retornar:
-
-```php
-    [
-        11 => false,
-        25 => true,
-        18 => true,
-        31 => true
-    ];
-```
-
-### Exercícios 5
+### Respostas 5
 ---
 
 ### 5 - *a)*
 ```php
     $idades = [
-        25,
-        50,
-        30
+        25 => true,
+        15 => false,
+        30 => true,
     ];
 ```
 
 ### 5 - *b)*
 ```php
     $idades = [
-        35,
-        41,
-        52,
-        44,
-        33,
-        22,
+        35 => true,
+        41 => true,
+        15 => false,
+        44 => true,
+        33 => true,
+        22 => true,
     ];
 ```
 
 ### 5 - *c)*
 ```php
     $idades = [
-        15,
-        40,
-        72,
-        13,
-        60,
-        20,
-        11,
-        66,
-        14,
-        6,
-        22,
-        36,
-        30,
+        15 => false,
+        40 => true,
+        72 => true,
+        13 => false,
+        60 => true,
+        20 => true,
+        11 => false,
+        66 => true,
+        14 => false,
+        6 => false,
+        22 => true,
+        36 => true,
+        30 => true,
     ];
 ```
 
 ### 5 - *d)*
 ```php
     $idades = [
-        35,
-        41,
-        'pessoa_c' => 52,
-        44,
-        'idade' => 33,
-        'pessoa_a' => 22,
+        35 => true,
+        41 => true,
+        52 => true,
+        44 => true,
+        33 => true,
+        22 => true,
     ];
 ```
